@@ -1,4 +1,4 @@
-package com.project.smartlab_tf.ui.home;
+package com.project.smartlab_tf.ui.Perfil;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
