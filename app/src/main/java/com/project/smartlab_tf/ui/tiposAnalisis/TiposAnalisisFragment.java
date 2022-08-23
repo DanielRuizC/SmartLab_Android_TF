@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.project.smartlab_tf.databinding.FragmentGalleryBinding;
+import com.project.smartlab_tf.databinding.FragmentTiposanalisisBinding;
 
-public class GalleryFragment extends Fragment {
+public class TiposAnalisisFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
+    private FragmentTiposanalisisBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        TiposAnalisisViewModel tiposAnalisisViewModel =
+                new ViewModelProvider(this).get(TiposAnalisisViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentTiposanalisisBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textView11;
+        tiposAnalisisViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

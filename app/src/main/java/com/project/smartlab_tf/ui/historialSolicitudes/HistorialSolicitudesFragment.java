@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.project.smartlab_tf.databinding.FragmentSlideshowBinding;
+import com.project.smartlab_tf.databinding.FragmentHistorialsolicitudesBinding;
 
-public class SlideshowFragment extends Fragment {
+public class HistorialSolicitudesFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentHistorialsolicitudesBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        HistorialSolicitudesViewModel historialSolicitudesViewModel =
+                new ViewModelProvider(this).get(HistorialSolicitudesViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentHistorialsolicitudesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textHistorial;
+        historialSolicitudesViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
