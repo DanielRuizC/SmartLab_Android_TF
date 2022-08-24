@@ -203,12 +203,11 @@
         android:layout_width="65dp"
         android:layout_height="20dp"
         android:layout_marginStart="180dp"
-        android:layout_marginTop="50dp"
         android:text="Atendido"
         android:textColor="#2FDC4B"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        tools:layout_editor_absoluteY="249dp" />
 
     <TextView
         android:id="@+id/textView14"
@@ -300,24 +299,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="65dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="50dp"
-        android:text="Atendido"
-        android:textColor="#2FDC4B"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/textView38"
+    <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="675dp" />
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="40dp"
+        android:text="Button"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
