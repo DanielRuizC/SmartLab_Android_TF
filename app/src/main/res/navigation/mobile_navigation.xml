@@ -9,18 +9,52 @@
         android:id="@+id/nav_perfil"
         android:name="com.project.smartlab_tf.ui.Perfil.PerfilFragment"
         android:label="@string/menu_perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_nav_perfil_to_nav_historialSolicitudes"
+            app:destination="@id/nav_historialSolicitudes" />
+        <action
+            android:id="@+id/action_nav_perfil_to_nav_tiposAnalisis2"
+            app:destination="@id/nav_tiposAnalisis" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_tiposAnalisis"
         android:name="com.project.smartlab_tf.ui.tiposAnalisis.TiposAnalisisFragment"
         android:label="@string/menu_tiposAnalisis"
-        tools:layout="@layout/fragment_tiposanalisis" />
+        tools:layout="@layout/fragment_tiposanalisis" >
+        <action
+            android:id="@+id/action_nav_tiposAnalisis_to_detallesAnalisisFragment"
+            app:destination="@id/detallesAnalisisFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_historialSolicitudes"
         android:name="com.project.smartlab_tf.ui.historialSolicitudes.HistorialSolicitudesFragment"
         android:label="@string/menu_historialSolicitudes"
-        tools:layout="@layout/fragment_historialsolicitudes" />
+        tools:layout="@layout/fragment_historialsolicitudes" >
+        <action
+            android:id="@+id/action_nav_historialSolicitudes_to_nav_resultadoAnalisis"
+            app:destination="@id/nav_resultadoAnalisis" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_resultadoAnalisis"
+        android:name="com.project.smartlab_tf.ResultadoAnalisisFragment"
+        android:label="fragment_resultado_analisis"
+        tools:layout="@layout/fragment_resultado_analisis" >
+        <action
+            android:id="@+id/action_nav_resultadoAnalisis_to_comentarioFragment"
+            app:destination="@id/comentarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comentarioFragment"
+        android:name="com.project.smartlab_tf.ComentarioFragment"
+        android:label="fragment_comentario"
+        tools:layout="@layout/fragment_comentario" />
+    <fragment
+        android:id="@+id/detallesAnalisisFragment"
+        android:name="com.project.smartlab_tf.DetallesAnalisisFragment"
+        android:label="fragment_detalles_analisis"
+        tools:layout="@layout/fragment_detalles_analisis" />
 
 </navigation>

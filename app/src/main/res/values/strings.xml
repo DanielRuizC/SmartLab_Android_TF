@@ -10,5 +10,7 @@
     <string name="menu_perfil">Perfil</string>
     <string name="menu_tiposAnalisis">Tipos de Análisis</string>
     <string name="menu_historialSolicitudes">Historial de Solicitudes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

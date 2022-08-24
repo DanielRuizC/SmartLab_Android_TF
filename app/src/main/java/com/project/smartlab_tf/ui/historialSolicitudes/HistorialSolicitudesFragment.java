@@ -24,7 +24,7 @@ public class HistorialSolicitudesFragment extends Fragment {
         binding = FragmentHistorialsolicitudesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textView10;
+        final TextView textView = binding.textView38;
         historialSolicitudesViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
