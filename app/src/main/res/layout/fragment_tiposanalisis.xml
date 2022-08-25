@@ -9,6 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#28FFFF8D"
         tools:layout_editor_absoluteX="-29dp"
         tools:layout_editor_absoluteY="0dp">
 
@@ -16,9 +17,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/botonFlecha2"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="17dp"
+                android:rotationY="180"
+                android:src="?attr/actionModeCloseDrawable"
+                app:layout_constraintStart_toEndOf="@+id/textView56"
+                app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+            <ImageView
+                android:id="@+id/botonFlecha3"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:rotationY="180"
+                android:src="?attr/actionModeCloseDrawable"
+                app:layout_constraintStart_toEndOf="@+id/textView60"
+                app:layout_constraintTop_toBottomOf="@+id/textView59" />
+
+            <ImageView
+                android:id="@+id/botonFlecha4"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="15dp"
+                android:rotationY="180"
+                android:src="?attr/actionModeCloseDrawable"
+                app:layout_constraintStart_toEndOf="@+id/textView57"
+                app:layout_constraintTop_toBottomOf="@+id/textView58" />
+
+            <ImageView
+                android:id="@+id/botonFlecha5"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="19dp"
+                android:rotationY="180"
+                android:src="?attr/actionModeCloseDrawable"
+                app:layout_constraintStart_toEndOf="@+id/textView52"
+                app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
             <TextView
                 android:id="@+id/textView60"
-                android:layout_width="283dp"
+                android:layout_width="223dp"
                 android:layout_height="37dp"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="8dp"
@@ -32,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="60dp"
-                android:text="Conteo de Partículas"
+                android:text="Sulfatación"
                 android:textColor="#040404"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -46,7 +87,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="TODO"
-                android:src="@drawable/conteo_particulas"
+                android:src="@drawable/lab_4"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView58" />
 
@@ -56,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="60dp"
-                android:text="Conteo de Partículas"
+                android:text="Nitración"
                 android:textColor="#040404"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -70,14 +111,14 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="TODO"
-                android:src="@drawable/conteo_particulas"
+                android:src="@drawable/lab_3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView59" />
 
             <TextView
                 android:id="@+id/textView57"
-                android:layout_width="283dp"
-                android:layout_height="37dp"
+                android:layout_width="222dp"
+                android:layout_height="33dp"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="8dp"
                 android:text="Determinar fallas por fatiga de metales ferrosos y contacto entre metales..."
@@ -86,8 +127,8 @@
 
             <TextView
                 android:id="@+id/textView56"
-                android:layout_width="283dp"
-                android:layout_height="37dp"
+                android:layout_width="220dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="8dp"
                 android:text="Determinar fallas por fatiga de metales ferrosos y contacto entre metales..."
@@ -100,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="60dp"
-                android:text="Conteo de Partículas"
+                android:text="Oxidación"
                 android:textColor="#040404"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -114,7 +155,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="TODO"
-                android:src="@drawable/conteo_particulas"
+                android:src="@drawable/lab_2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView55" />
 
@@ -124,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="60dp"
-                android:text="Conteo de Partículas"
+                android:text="Viscocidad"
                 android:textColor="#040404"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -133,8 +174,8 @@
 
             <TextView
                 android:id="@+id/textView52"
-                android:layout_width="283dp"
-                android:layout_height="37dp"
+                android:layout_width="217dp"
+                android:layout_height="31dp"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="8dp"
                 android:text="Determinar fallas por fatiga de metales ferrosos y contacto entre metales..."
@@ -148,7 +189,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="TODO"
-                android:src="@drawable/conteo_particulas"
+                android:src="@drawable/lab_1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView51" />
 
@@ -167,8 +208,8 @@
 
             <TextView
                 android:id="@+id/textView42"
-                android:layout_width="283dp"
-                android:layout_height="37dp"
+                android:layout_width="220dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="8dp"
                 android:text="Determinar fallas por fatiga de metales ferrosos y contacto entre metales..."
@@ -185,6 +226,16 @@
                 android:src="@drawable/conteo_particulas"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+            <ImageView
+                android:id="@+id/botonFlecha"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="85dp"
+                android:rotationY="180"
+                android:src="?attr/actionModeCloseDrawable"
+                app:layout_constraintStart_toEndOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
