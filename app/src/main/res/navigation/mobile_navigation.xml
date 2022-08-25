@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_perfil">
+    app:startDestination="@id/nav_perfil">
 
     <fragment
         android:id="@+id/nav_perfil"
@@ -25,7 +25,7 @@
         tools:layout="@layout/fragment_tiposanalisis" >
         <action
             android:id="@+id/action_nav_tiposAnalisis_to_detallesAnalisisFragment"
-            app:destination="@id/detallesAnalisisFragment" />
+            app:destination="@id/nav_detalleAnalisis" />
     </fragment>
 
     <fragment
@@ -43,23 +43,22 @@
         android:label="fragment_resultado_analisis"
         tools:layout="@layout/fragment_resultado_analisis" >
         <action
-            android:id="@+id/action_nav_resultadoAnalisis_to_comentarioFragment"
-            app:destination="@id/comentarioFragment" />
+            android:id="@+id/idPantallaMensaje"
+            app:destination="@id/nav_mensaje" />
     </fragment>
     <fragment
-        android:id="@+id/comentarioFragment"
+        android:id="@+id/nav_mensaje"
         android:name="com.project.smartlab_tf.ComentarioFragment"
         android:label="fragment_comentario"
-        tools:layout="@layout/fragment_comentario" />
+        tools:layout="@layout/fragment_comentario" >
+        <action
+            android:id="@+id/action_nav_mensaje_self"
+            app:destination="@id/nav_mensaje" />
+    </fragment>
     <fragment
-        android:id="@+id/detallesAnalisisFragment"
+        android:id="@+id/nav_detalleAnalisis"
         android:name="com.project.smartlab_tf.DetallesAnalisisFragment"
         android:label="fragment_detalles_analisis"
         tools:layout="@layout/fragment_detalles_analisis" />
-    <fragment
-        android:id="@+id/prueba"
-        android:name="com.project.smartlab_tf.prueba"
-        android:label="fragment_prueba"
-        tools:layout="@layout/fragment_prueba" />
 
 </navigation>
