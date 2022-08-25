@@ -56,5 +56,10 @@
         android:name="com.project.smartlab_tf.DetallesAnalisisFragment"
         android:label="fragment_detalles_analisis"
         tools:layout="@layout/fragment_detalles_analisis" />
+    <fragment
+        android:id="@+id/prueba"
+        android:name="com.project.smartlab_tf.prueba"
+        android:label="fragment_prueba"
+        tools:layout="@layout/fragment_prueba" />
 
 </navigation>
