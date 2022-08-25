@@ -20,6 +20,6 @@
         <item
             android:id="@+id/nav_registroEquipo"
             android:icon="@drawable/menu_historial"
-            android:title="Registrar equipo" />
+            android:title="@string/registrar_equipo" />
     </group>
 </menu>

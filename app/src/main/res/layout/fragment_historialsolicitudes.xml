@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#4543AE95"
+        android:background="#459AA8A5"
         tools:layout_editor_absoluteX="-204dp"
         tools:layout_editor_absoluteY="-16dp">
 

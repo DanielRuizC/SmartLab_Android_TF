@@ -24,7 +24,6 @@ public class HistorialSolicitudesFragment extends Fragment {
 
     }
 
-    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable
                              ViewGroup container, @Nullable Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_historialsolicitudes, container, false);

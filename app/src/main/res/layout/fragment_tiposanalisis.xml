@@ -17,46 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/botonFlecha2"
-                android:layout_width="40dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="17dp"
-                android:rotationY="180"
-                android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintStart_toEndOf="@+id/textView56"
-                app:layout_constraintTop_toBottomOf="@+id/textView55" />
-
-            <ImageView
-                android:id="@+id/botonFlecha3"
-                android:layout_width="40dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="14dp"
-                android:rotationY="180"
-                android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintStart_toEndOf="@+id/textView60"
-                app:layout_constraintTop_toBottomOf="@+id/textView59" />
-
-            <ImageView
-                android:id="@+id/botonFlecha4"
-                android:layout_width="40dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="15dp"
-                android:rotationY="180"
-                android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintStart_toEndOf="@+id/textView57"
-                app:layout_constraintTop_toBottomOf="@+id/textView58" />
-
-            <ImageView
-                android:id="@+id/botonFlecha5"
-                android:layout_width="40dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="19dp"
-                android:rotationY="180"
-                android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintStart_toEndOf="@+id/textView52"
-                app:layout_constraintTop_toBottomOf="@+id/textView51" />
-
             <TextView
                 android:id="@+id/textView60"
                 android:layout_width="223dp"
@@ -72,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="70dp"
                 android:text="Sulfatación"
                 android:textColor="#040404"
                 android:textSize="16sp"
@@ -96,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="70dp"
                 android:text="Nitración"
                 android:textColor="#040404"
                 android:textSize="16sp"
@@ -140,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="70dp"
                 android:text="Oxidación"
                 android:textColor="#040404"
                 android:textSize="16sp"
@@ -164,7 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="70dp"
                 android:text="Viscocidad"
                 android:textColor="#040404"
                 android:textSize="16sp"
@@ -175,7 +135,7 @@
             <TextView
                 android:id="@+id/textView52"
                 android:layout_width="217dp"
-                android:layout_height="31dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="8dp"
                 android:text="Determinar fallas por fatiga de metales ferrosos y contacto entre metales..."
@@ -198,13 +158,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:text="Conteo de Partículas"
                 android:textColor="#040404"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/conteo_particulas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView11" />
 
             <TextView
                 android:id="@+id/textView42"
@@ -216,26 +187,66 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="58dp"
-                android:layout_height="48dp"
+            <ImageButton
+                android:id="@+id/botonFlecha1"
+                android:layout_width="54dp"
+                android:layout_height="51dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="TODO"
-                android:src="@drawable/conteo_particulas"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView11" />
-
-            <ImageView
-                android:id="@+id/botonFlecha"
-                android:layout_width="40dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="85dp"
-                android:rotationY="180"
+                android:layout_marginTop="4dp"
+                android:rotation="180"
                 android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintStart_toEndOf="@+id/textView11"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                app:layout_constraintStart_toEndOf="@+id/textView42"
+                app:layout_constraintTop_toTopOf="@+id/textView11"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/botonFlecha"
+                android:layout_width="54dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:rotation="180"
+                android:src="?attr/actionModeCloseDrawable"
+                app:layout_constraintStart_toEndOf="@+id/textView56"
+                app:layout_constraintTop_toTopOf="@+id/textView55"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/botonFlecha2"
+                android:layout_width="54dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:rotation="180"
+                android:src="?attr/actionModeCloseDrawable"
+                app:layout_constraintStart_toEndOf="@+id/textView60"
+                app:layout_constraintTop_toTopOf="@+id/textView59"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/botonFlecha3"
+                android:layout_width="54dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:rotation="180"
+                android:src="?attr/actionModeCloseDrawable"
+                app:layout_constraintStart_toEndOf="@+id/textView57"
+                app:layout_constraintTop_toTopOf="@+id/textView58"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/botonFlecha4"
+                android:layout_width="54dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:rotation="180"
+                android:src="?attr/actionModeCloseDrawable"
+                app:layout_constraintStart_toEndOf="@+id/textView52"
+                app:layout_constraintTop_toTopOf="@+id/textView51"
+                tools:ignore="SpeakableTextPresentCheck" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

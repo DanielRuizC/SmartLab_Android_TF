@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,13 +30,13 @@ public class ResultadoAnalisisFragment extends Fragment {
             ViewGroup container, @Nullable Bundle savedInstanceState) {
         View vista1 = inflater.inflate(R.layout.fragment_resultado_analisis, container, false);
 
-        /*Button button = vista1.findViewById(R.id.chatButton);
+        ImageButton button = vista1.findViewById(R.id.chatButton1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                findNavController(v).navigate(R.id.idPantallaMensaje);
+            public void onClick(View v2) {
+                findNavController(v2).navigate(R.id.idPantallaComentario);
             }
-        });*/
+        });
 
         return vista1;
     }

@@ -25,6 +25,7 @@
         android:layout_marginStart="26dp"
         android:layout_marginTop="28dp"
         android:text="Conteo de Partículas"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,8 +43,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="144dp"
-        android:layout_height="129dp"
+        android:layout_width="154dp"
+        android:layout_height="137dp"
         android:layout_marginTop="140dp"
         android:layout_marginEnd="24dp"
         android:background="#45FFFFFF"
@@ -80,6 +81,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="8dp"
         android:text=" 4 días hábiles"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
@@ -107,11 +109,11 @@
         android:id="@+id/textView48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
         android:text="$ 89"
         app:layout_constraintStart_toEndOf="@+id/imageView14"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toTopOf="@+id/textView47" />
 
     <TextView
         android:id="@+id/textView49"
@@ -119,15 +121,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="350dp"
         android:text="Solicita tus análisis aquí"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView17"
+    <ImageButton
+        android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="23dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:src="@drawable/add_solicitud"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
