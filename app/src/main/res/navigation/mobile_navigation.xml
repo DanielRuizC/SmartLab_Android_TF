@@ -34,7 +34,7 @@
         android:label="@string/menu_historialSolicitudes"
         tools:layout="@layout/fragment_historialsolicitudes" >
         <action
-            android:id="@+id/action_nav_historialSolicitudes_to_nav_resultadoAnalisis"
+            android:id="@+id/idPantallaResultadoAnalisis"
             app:destination="@id/nav_resultadoAnalisis" />
     </fragment>
     <fragment

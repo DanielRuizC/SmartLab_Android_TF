@@ -1,5 +1,7 @@
 package com.project.smartlab_tf.ui.historialSolicitudes;
 
+import static androidx.navigation.Navigation.findNavController;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,21 +20,23 @@ import com.project.smartlab_tf.ResultadoAnalisisFragment;
 
 public class HistorialSolicitudesFragment extends Fragment {
 
-    private HistorialSolicitudesViewModel mViewModel;
+    public HistorialSolicitudesFragment() {
 
-    public static HistorialSolicitudesFragment newInstance() { return new HistorialSolicitudesFragment();}
+    }
 
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable
                              ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mViewModel =
-                new ViewModelProvider(this).get(HistorialSolicitudesViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_historialsolicitudes, container, false);
+        View vista = inflater.inflate(R.layout.fragment_historialsolicitudes, container, false);
 
-        Button b1 = root.findViewById(R.id.button2);
-        b1.setOnClickListener(v -> {
-            startActivity(new Intent(getContext(), MainActivity.class));
+        Button b1 = vista.findViewById(R.id.button2);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findNavController(v).navigate(R.id.idPantallaResultadoAnalisis);
+            }
         });
 
-        return root;
+        return vista;
     }
 }
