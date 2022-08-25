@@ -4,38 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#32CCFF90"
     android:orientation="vertical"
     tools:context=".ui.registroEquipo.registroEquipoFragment">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="109dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registro equipo" />
+        android:layout_marginStart="80dp"
+        android:text="Registro equipo"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView38"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="40dp" />
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ingrese nombre de equipo" />
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Ingrese nombre de equipo"
+        android:minHeight="48dp" />
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ingrese descripcion" />
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Ingrese descripción"
+        android:minHeight="48dp" />
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sede" />
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="Sede"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="34dp" />
 
     <Button
         android:id="@+id/button"
