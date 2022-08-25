@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_nav_perfil_to_nav_tiposAnalisis2"
             app:destination="@id/nav_tiposAnalisis" />
+        <action
+            android:id="@+id/action_nav_perfil_to_nav_registroEquipo"
+            app:destination="@id/nav_registroEquipo" />
     </fragment>
 
     <fragment
@@ -56,10 +59,16 @@
         android:name="com.project.smartlab_tf.DetallesAnalisisFragment"
         android:label="fragment_detalles_analisis"
         tools:layout="@layout/fragment_detalles_analisis" />
+
     <fragment
-        android:id="@+id/prueba"
-        android:name="com.project.smartlab_tf.prueba"
-        android:label="fragment_prueba"
-        tools:layout="@layout/fragment_prueba" />
+        android:id="@+id/nav_registroEquipo"
+        android:name="com.project.smartlab_tf.ui.registroEquipo.registroEquipoFragment"
+        android:label="Registrar equipo"
+        tools:layout="@layout/fragment_registro_equipo"/>
+    <fragment
+        android:id="@+id/nav_registroComponente"
+        android:name="com.project.smartlab_tf.ui.registroComponente.registroComponenteFragment"
+        android:label="Registrar componente"
+        tools:layout="@layout/fragment_registro_componente"/>
 
 </navigation>

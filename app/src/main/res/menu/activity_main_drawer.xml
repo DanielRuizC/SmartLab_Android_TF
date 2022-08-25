@@ -16,5 +16,10 @@
             android:id="@+id/nav_historialSolicitudes"
             android:icon="@drawable/menu_historial"
             android:title="@string/menu_historialSolicitudes" />
+
+        <item
+            android:id="@+id/nav_registroEquipo"
+            android:icon="@drawable/menu_historial"
+            android:title="Registrar equipo" />
     </group>
 </menu>
