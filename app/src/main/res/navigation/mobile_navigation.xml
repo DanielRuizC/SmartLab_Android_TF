@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_nav_perfil_to_nav_registroEquipo"
             app:destination="@id/nav_registroEquipo" />
+        <action
+            android:id="@+id/action_nav_perfil_to_nav_tiposAnalisis"
+            app:destination="@id/nav_tiposAnalisis" />
     </fragment>
 
     <fragment
