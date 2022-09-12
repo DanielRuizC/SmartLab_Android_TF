@@ -60,7 +60,7 @@
     <fragment
         android:id="@+id/detallesAnalisisFragment"
         android:name="com.project.smartlab_tf.DetallesAnalisisFragment"
-        android:label="fragment_detalles_analisis"
+        android:label="Detalle de Análisis"
         tools:layout="@layout/fragment_detalles_analisis" />
 
     <fragment
