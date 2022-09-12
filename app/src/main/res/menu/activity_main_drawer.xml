@@ -7,7 +7,11 @@
         <item
             android:id="@+id/nav_perfil"
             android:icon="@drawable/menu_perfil"
-            android:title="@string/menu_perfil" />
+            android:title="@string/menu_perfil"/>
+        <item
+            android:id="@+id/nav_solicitarkit"
+            android:icon="@drawable/menu_historial"
+            android:title="Solicitar Kit" />
         <item
             android:id="@+id/nav_tiposAnalisis"
             android:icon="@drawable/menu_tipos_analisis"
@@ -21,5 +25,8 @@
             android:id="@+id/nav_registroEquipo"
             android:icon="@drawable/menu_historial"
             android:title="@string/registrar_equipo" />
+
+
+
     </group>
 </menu>
