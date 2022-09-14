@@ -8,9 +8,10 @@
     tools:context=".ui.registroComponente.registroComponenteFragment">
 
     <TextView
-        android:id="@+id/textView19"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,10 +22,14 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView22"
+
+    <Spinner
+        android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="wrap_content"
+        android:backgroundTint="#03A9F4"
+        android:foregroundTint="#AE2222"
+        android:spinnerMode="dialog" />
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView4"
@@ -35,31 +40,12 @@
         android:hint="Nombre componente"
         android:minHeight="48dp" />
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
+    <AutoCompleteTextView
         android:id="@+id/textView25"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:text="Equipo" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:minHeight="48dp"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textView53"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:hint="Equipo" />
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView5"
@@ -77,19 +63,17 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Registrar" />
 
-    <TextView
-        android:id="@+id/textView61"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/button12"
-        android:layout_width="match_parent"
+        android:id="@+id/cancelar2"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="cancelar" />
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.project.smartlab_tf.ui.historialSolicitudes;
+/*package com.project.smartlab_tf.ui.historialSolicitudes;
 
 import static androidx.navigation.Navigation.findNavController;
 
@@ -84,4 +84,4 @@ public class HistorialSolicitudesFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-}
+}*/

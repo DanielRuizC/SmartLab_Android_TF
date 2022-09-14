@@ -33,17 +33,15 @@ public class registroEquipoFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(registroEquipoViewModel.class);
         View root = inflater.inflate(R.layout.fragment_registro_equipo,container,false);
 
-        Button b1 = root.findViewById(R.id.button);
-        b1.setOnClickListener(new View.OnClickListener() {
+
+
+        Button b2 = root.findViewById(R.id.cancelar1);
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findNavController(v).navigate(R.id.nav_registroComponente);
+                findNavController(v).navigate(R.id.nav_perfil);
             }
-        });;
-
+        });
         return root;
-
-
     }
-
 }
