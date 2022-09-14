@@ -26,6 +26,15 @@
             android:icon="@drawable/menu_historial"
             android:title="@string/registrar_equipo" />
 
+        <item
+            android:id="@+id/nav_registroComponente"
+            android:icon="@drawable/menu_historial"
+            android:title="Registrar Componenete"/>
+
+        <item
+            android:id="@+id/nav_MisEquipos"
+            android:icon="@drawable/menu_historial"
+            android:title="Mis Equipos"/>
 
 
     </group>
