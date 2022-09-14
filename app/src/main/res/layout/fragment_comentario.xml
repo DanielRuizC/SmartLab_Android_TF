@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#39FFFFFF"
-    tools:context=".ComentarioFragment">
+    tools:context=".ui.historialSolicitudes.ComentarioFragment">
 
     <ImageButton
         android:id="@+id/imageButton4"

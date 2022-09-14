@@ -2,7 +2,6 @@ package com.project.smartlab_tf.ui.historialSolicitudes;
 
 import static androidx.navigation.Navigation.findNavController;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -10,20 +9,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.project.smartlab_tf.MainActivity;
 import com.project.smartlab_tf.R;
-import com.project.smartlab_tf.ResultadoAnalisisFragment;
 import com.project.smartlab_tf.databinding.FragmentHistorialsolicitudesBinding;
 
 import java.util.List;

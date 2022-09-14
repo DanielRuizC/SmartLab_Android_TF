@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_resultadoAnalisis"
-        android:name="com.project.smartlab_tf.ResultadoAnalisisFragment"
+        android:name="com.project.smartlab_tf.ui.historialSolicitudes.ResultadoAnalisisFragment"
         android:label="fragment_resultado_analisis"
         tools:layout="@layout/fragment_resultado_analisis" >
         <action
@@ -54,12 +54,12 @@
     </fragment>
     <fragment
         android:id="@+id/comentarioFragment"
-        android:name="com.project.smartlab_tf.ComentarioFragment"
+        android:name="com.project.smartlab_tf.ui.historialSolicitudes.ComentarioFragment"
         android:label="fragment_comentario"
         tools:layout="@layout/fragment_comentario" />
     <fragment
         android:id="@+id/detallesAnalisisFragment"
-        android:name="com.project.smartlab_tf.DetallesAnalisisFragment"
+        android:name="com.project.smartlab_tf.ui.tiposAnalisis.DetallesAnalisisFragment"
         android:label="Detalle de Análisis"
         tools:layout="@layout/fragment_detalles_analisis" />
 

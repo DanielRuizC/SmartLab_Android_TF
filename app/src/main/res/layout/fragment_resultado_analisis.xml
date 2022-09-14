@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#66A7FFEB"
-    tools:context=".ResultadoAnalisisFragment">
+    tools:context=".ui.historialSolicitudes.ResultadoAnalisisFragment">
 
     <TextView
         android:id="@+id/textView40"

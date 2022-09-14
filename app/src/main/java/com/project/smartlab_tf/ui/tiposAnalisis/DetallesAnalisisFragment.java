@@ -1,4 +1,4 @@
-package com.project.smartlab_tf;
+package com.project.smartlab_tf.ui.tiposAnalisis;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.project.smartlab_tf.R;
 
 /**
  * A simple {@link Fragment} subclass.
