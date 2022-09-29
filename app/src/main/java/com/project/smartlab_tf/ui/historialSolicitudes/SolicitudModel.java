@@ -1,27 +1,25 @@
 package com.project.smartlab_tf.ui.historialSolicitudes;
 
-import java.util.Date;
-
 public class SolicitudModel {
-    private String codigoSolicitud;
-    private Date fechaRegistroSolicitud;
-    private String estadoSolicitud;
+    private String idCodigoSolicitud;
+    private String strFechaRegistroSolicitud;
+    private String strEstadoSolicitud;
 
-    public SolicitudModel(String numeroSolicitud, Date fechaRegistroSolicitud, String estadoSolicitud) {
-        this.codigoSolicitud = numeroSolicitud;
-        this.fechaRegistroSolicitud = fechaRegistroSolicitud;
-        this.estadoSolicitud = estadoSolicitud;
+    public SolicitudModel(String numeroSolicitud, String fechaRegistroSolicitud, String estadoSolicitud) {
+        this.idCodigoSolicitud = numeroSolicitud;
+        this.strFechaRegistroSolicitud = fechaRegistroSolicitud;
+        this.strEstadoSolicitud = estadoSolicitud;
     }
 
-    public String getCodigoSolicitud() {
-        return codigoSolicitud;
+    public String getIdCodigoSolicitud() {
+        return idCodigoSolicitud;
     }
 
-    public Date getFechaRegistroSolicitud() {
-        return fechaRegistroSolicitud;
+    public String getStrFechaRegistroSolicitud() {
+        return strFechaRegistroSolicitud;
     }
 
-    public String getEstadoSolicitud() {
-        return estadoSolicitud;
+    public String getStrEstadoSolicitud() {
+        return strEstadoSolicitud;
     }
 }
