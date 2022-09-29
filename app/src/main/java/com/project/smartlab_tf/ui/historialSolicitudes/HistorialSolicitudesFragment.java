@@ -1,77 +1,57 @@
-/*package com.project.smartlab_tf.ui.historialSolicitudes;
-
-import static androidx.navigation.Navigation.findNavController;
+package com.project.smartlab_tf.ui.historialSolicitudes;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.project.smartlab_tf.R;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.project.smartlab_tf.databinding.FragmentHistorialsolicitudesBinding;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class HistorialSolicitudesFragment extends Fragment {
 
     private FragmentHistorialsolicitudesBinding binding;
-    NavController navController;
+    private RequestQueue cola;
+    private ArrayList<SolicitudModel> habitaciones;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentHistorialsolicitudesBinding.inflate(inflater, container, false);
-        return binding.getRoot();
+        View root = binding.getRoot();
+
+        cola = Volley.newRequestQueue(getContext());
+
+        obtenerHistorial();
+
+        return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        setHasOptionsMenu(true);
-
-        navController = Navigation.findNavController(binding.getRoot());
-
-        RecyclerView recyclerView = binding.recyclerUsuarios;
-
-        DAOUsuarios daoUsuarios = new DAOUsuarios(requireContext());
-        List<SolicitudModel> listaSolicitudes = daoUsuarios.listarSolicitudes();
-
-        RecyclerView.Adapter<UserAdapter.ViewHolder> adapter = new UserAdapter(listaUsuarios);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        recyclerView.setAdapter(adapter);
     }
 
+    private void obtenerHistorial(){
+        final String url = "http://181.66.138.91:8080/laboratorio_db/select_solicitudes.php";
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url,null, x-> {
+            Log.e("Log","Entro");
+        },error -> {
+            Log.e("Log",error.toString());
+        });
 
-
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        MenuItem hide = menu.findItem(R.id.action_addUser);
-        hide.setVisible(true);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.action_addUser){
-            Bundle bundle = new Bundle();
-            bundle.putBoolean(Constantes.MODO_EDICION, false);
-            bundle.putParcelable(Constantes.OBJ_USUARIO, null);
-            navController.navigate(R.id.newUserFragment, bundle);
-        }
-        return super.onOptionsItemSelected(item);
+        this.cola.add(request);
     }
 
     @Override
@@ -79,4 +59,4 @@ public class HistorialSolicitudesFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-}*/
+}
