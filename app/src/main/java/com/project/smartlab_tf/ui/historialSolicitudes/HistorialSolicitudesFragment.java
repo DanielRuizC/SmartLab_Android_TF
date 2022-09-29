@@ -1,11 +1,15 @@
 package com.project.smartlab_tf.ui.historialSolicitudes;
 
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,230 +28,135 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+public class HistorialSolicitudesFragment extends Fragment implements Response.Listener<JSONObject>, Response.ErrorListener {
 
-public class HistorialSolicitudesFragment extends Fragment {
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
 
-    private ArrayList<SolicitudModel> listaSolicitudesModel;
-    private RequestQueue rq;
-    private RecyclerView rv1;
-    private AdaptadorSolicitud adaptadorSolicitud;
+    private String mParam1;
+    private String mParam2;
+/*
+    private OnFragmentInteractionListener mListener;*/
+
+    RecyclerView recyclerSolicitudes;
+    ArrayList<SolicitudModel> listaSolicitudes;
+    ProgressDialog dialog;
+    RequestQueue request;
+    JsonObjectRequest jsonObjectRequest;
+
+    public HistorialSolicitudesFragment(){
+
+    }
+
+    public static HistorialSolicitudesFragment newInstance(String param1, String param2){
+        HistorialSolicitudesFragment fragment  = new HistorialSolicitudesFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+    public void onCreate (Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null){
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
+    public View onCreateView (LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceState) {
+        View vista = inflater.inflate(R.layout.fragment_historialsolicitudes,container,false);
+
+        listaSolicitudes = new ArrayList<>();
+
+        recyclerSolicitudes = (RecyclerView) vista.findViewById(R.id.recyclerSolicitudes);
+        recyclerSolicitudes.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        recyclerSolicitudes.setHasFixedSize(true);
+
+        request = Volley.newRequestQueue(getContext());
+        
+        cargarWebService();
+
+        return vista;
+    }
+
+    private void cargarWebService() {
+
+        dialog = new ProgressDialog(getContext());
+        dialog.setMessage("Consultando...");
+        dialog.show();
+
+        String url = "http://181.66.138.91:8080/laboratorio_db/solicitudes.php";
+
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        request.add(jsonObjectRequest);
+    }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_historialsolicitudes);
-        listaSolicitudesModel = new ArrayList<>();
-        rq = Volley.newRequestQueue(this);
-        for (int f = 0; f < 10; f++)
-            cargaPersona();
-        rv1 =
-        rv1 = findViewById(R.id.rv1);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        rv1.setLayoutManager(linearLayoutManager);
-        adaptadorSolicitud = new AdaptadorSolicitud();
-        rv1.setAdapter(adaptadorSolicitud);
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(getContext(), "No se puede conectar" + error.toString(), Toast.LENGTH_SHORT).show();
+        System.out.println();
+        Log.d("ERROR: ", error.toString());
+        dialog.hide();
     }
 
-    private void cargaPersona() {
-        String url = "http://181.66.138.91:8080/laboratorio_db/solicitudes.php";
-        JsonObjectRequest requerimiento = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            String valor = response.get("solicitudes").toString();
-                            JSONArray arreglo = new JSONArray(valor);
-                            JSONObject objeto = new JSONObject(arreglo.get(0).toString());
-                            String codigo = objeto.getString("codigo");
-                            String estadoSoli = objeto.getString("estado");
-                            String fechaSoli = objeto.getString("fecha");
-                            SolicitudModel solicitudModel = new SolicitudModel(codigo, estadoSoli, fechaSoli);
-                            listaSolicitudesModel.add(solicitudModel);
-                            adaptadorSolicitud.notifyItemRangeInserted(listaSolicitudesModel.size(), 1);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener(){
-                    @Override
-                    public void onErrorResponse(VolleyError error){
+    @Override
+    public void onResponse(JSONObject response) {
 
-                    }
-                });
-        rq.add(requerimiento);
-    }
+        SolicitudModel solicitudModel = null;
 
-    private class AdaptadorSolicitud extends RecyclerView.Adapter<AdaptadorSolicitud.AdaptadorSolicitudHolder> {
+        JSONArray json = response.optJSONArray("solicitudes");
 
-        public AdaptadorSolicitudHolder onCreateViewHolder (@NonNull ViewGroup parent, int viewType){
-            return new AdaptadorSolicitudHolder(getLayoutInflater().inflate(R.layout.fila_historial_solicitudes,parent,false));
-        }
+        try {
 
-        public void onBindViewHolder(@NonNull AdaptadorSolicitudHolder holder, int position){
-            holder.imprimir(position);
-        }
+            for (int i = 0; i < json.length(); i++) {
+                solicitudModel = new SolicitudModel();
+                JSONObject jsonObject = null;
+                jsonObject = json.getJSONObject(i);
 
-        public int getItemCount(){
-            return listaSolicitudesModel.size();
-        }
-
-        class AdaptadorSolicitudHolder extends RecyclerView.ViewHolder {
-            TextView codigo, fechaSolicitud, estadoAtencion;
-
-            public AdaptadorSolicitudHolder(@NonNull View itemView) {
-                super(itemView);
-                codigo = itemView.findViewById(R.id.txtCodigo);
-                fechaSolicitud = itemView.findViewById(R.id.txtFechaSol);
-                estadoAtencion = itemView.findViewById(R.id.txtEstadoSol);
+                solicitudModel.setIdCodigoSolicitud(jsonObject.optString("codigo"));
+                solicitudModel.setStrEstadoSolicitud(jsonObject.optString("estado"));
+                solicitudModel.setStrFechaRegistroSolicitud(jsonObject.optString("fecha"));
+                listaSolicitudes.add(solicitudModel);
             }
-            public void imprimir (int position){
-                codigo.setText("Codigo:"+listaSolicitudesModel.get(position).getIdCodigoSolicitud());
-                fechaSolicitud.setText("Fecha:"+listaSolicitudesModel.get(position).getStrFechaRegistroSolicitud());
-                estadoAtencion.setText("Estado:"+listaSolicitudesModel.get(position).getStrEstadoSolicitud());
-            }
+            dialog.hide();
+            SolicitudAdapter adapter = new SolicitudAdapter(listaSolicitudes);
+            recyclerSolicitudes.setAdapter(adapter);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(getContext(), "No se pudo establecer conexión con el servidor"
+                    + " "+response, Toast.LENGTH_SHORT).show();
+            dialog.hide();
+        }
+
+    }
+
+    /*public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener. onFragmentInteraction(uri);
         }
     }
+
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    public interface OnFragmentInteractionListener {
+        void onFragmentInteraction(Uri uri);
+    }*/
 }
 
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_historialsolicitudes);
-        listaSolicitudesModel = new ArrayList<>();
-        rq = Volley.newRequestQueue(this);
-        cargaPersona();
-    }*/
 
-
-    /*private static final String URL_solicitudes = "http://181.66.138.91:8080/laboratorio_db/select_solicitudes.php";
-    List<SolicitudModel> solicitudList;
-    RecyclerView recyclerView;
-
-    protected void onCreate(Bundle savedInstancesState) {
-        super.onCreate(savedInstancesState);
-        setContentView(R.layout.fragment_historialsolicitudes);
-
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerSolicitudes);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        solicitudList = new ArrayList<>();
-
-        loadsolicitudes();
-    }
-
-    private void loadsolicitudes() {
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_solicitudes,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray array = new JSONArray(response);
-                            for (int i = 0; i < array.length(); i++) {
-                                JSONObject solicitud = array.getJSONObject(i);
-
-                                solicitudList.add(new SolicitudModel(
-                                        solicitud.getString("codigo"),
-                                        solicitud.getString("estadoAtencion"),
-                                        solicitud.getString("fechaSolicitud")
-                                ));
-                            }
-
-                            SolicitudAdapter adapter = SolicitudAdapter(mCtx:;
-                            HistorialSolicitudesFragment.this, solicitudList);
-                            recyclerView.setAdapter(adapter);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                    }
-                });
-        Volley.newRequestQueue(this).add(StringRequest);
-
-    }
-
-    private Object findViewById(int recyclerSolicitudes) {
-    }
-
-    private void setContentView(int fragment_historialsolicitudes) {
-    }
-
-}*/
-
-    /*private FragmentHistorialsolicitudesBinding binding;
-    private RequestQueue cola;
-    private String url;
-    //private ArrayList<SolicitudModel> habitaciones;
-    //private final String url = "http://181.66.138.91:8080/laboratorio_db/solicitudes.php";
-
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        binding = FragmentHistorialsolicitudesBinding.inflate(inflater, container, false);
-        *//*View root = binding.getRoot();*//*
-        return binding.getRoot();
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        binding.recyclerSolicitudes.setLayoutManager(new LinearLayoutManager(requireContext()));
-        url = "http://181.66.138.91:8080/laboratorio_db/solicitudes.php";
-
-        cola = Volley.newRequestQueue(requireContext());
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,
-                response -> {
-                    try {
-                        JSONArray jsonArray = response.getJSONArray("solicitudes");
-                        Gson gson = new Gson();
-                        Type type = new TypeToken<ArrayList<SolicitudModel>>() {}.getType();
-                        List<SolicitudModel> solicitudModelList = gson.fromJson(String.valueOf(jsonArray), type);
-                        SolicitudAdapter adapterRecycler = new SolicitudAdapter(solicitudModelList);
-
-                    }
-                    catch (){
-
-                    }
-                }
-                )
-
-       *//*obtenerHistorial();*//*
-
-    }
-
-    *//*private void obtenerHistorial() {
-        final String url = "http://181.66.138.91:8080/laboratorio_db/solicitudes.php";
-        JsonObjectRequest JsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
-                response -> {
-                    try {
-                        binding.txtLista.setVisibility(View.VISIBLE);
-                        JSONArray jsonArray = response.getJSONArray("solicitudes");
-                        Gson gson = new Gson();
-                        Type type = new TypeToken<ArrayList<SolicitudModel>>() {}.getType();
-                        List<SolicitudModel> listaSolicitudes = gson.fromJson(String.valueOf(jsonArray), type);
-                        SolicitudAdapter adapterRecyclerView = new SolicitudAdapter(listaSolicitudes);
-                        binding.recyclerSolicitudes.setAdapter(adapterRecyclerView);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    //Log.e("Log","Entro");
-                }, error -> {
-            Log.e("Log", error.toString());
-        });
-        this.cola.add(JsonRequest);
-    }*//*
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
-}*/

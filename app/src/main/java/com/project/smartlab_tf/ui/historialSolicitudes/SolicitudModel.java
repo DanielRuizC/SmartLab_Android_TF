@@ -5,12 +5,6 @@ public class SolicitudModel {
     private String strFechaRegistroSolicitud;
     private String strEstadoSolicitud;
 
-    public SolicitudModel(String numeroSolicitud, String fechaRegistroSolicitud, String estadoSolicitud) {
-        this.idCodigoSolicitud = numeroSolicitud;
-        this.strFechaRegistroSolicitud = fechaRegistroSolicitud;
-        this.strEstadoSolicitud = estadoSolicitud;
-    }
-
     public String getIdCodigoSolicitud() {
         return idCodigoSolicitud;
     }
@@ -21,5 +15,17 @@ public class SolicitudModel {
 
     public String getStrEstadoSolicitud() {
         return strEstadoSolicitud;
+    }
+
+    public void setIdCodigoSolicitud(String idCodigoSolicitud) {
+        this.idCodigoSolicitud = idCodigoSolicitud;
+    }
+
+    public void setStrFechaRegistroSolicitud(String strFechaRegistroSolicitud) {
+        this.strFechaRegistroSolicitud = strFechaRegistroSolicitud;
+    }
+
+    public void setStrEstadoSolicitud(String strEstadoSolicitud) {
+        this.strEstadoSolicitud = strEstadoSolicitud;
     }
 }
