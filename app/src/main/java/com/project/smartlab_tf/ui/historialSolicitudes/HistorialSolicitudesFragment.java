@@ -1,8 +1,6 @@
 package com.project.smartlab_tf.ui.historialSolicitudes;
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,8 +33,6 @@ public class HistorialSolicitudesFragment extends Fragment implements Response.L
 
     private String mParam1;
     private String mParam2;
-/*
-    private OnFragmentInteractionListener mListener;*/
 
     RecyclerView recyclerSolicitudes;
     ArrayList<SolicitudModel> listaSolicitudes;
@@ -87,7 +83,7 @@ public class HistorialSolicitudesFragment extends Fragment implements Response.L
         dialog.setMessage("Consultando...");
         dialog.show();
 
-        String url = "http://181.66.138.91:8080/laboratorio_db/solicitudes.php";
+        String url = "http://192.168.0.109:8080/laboratorio_db/solicitudes.php";
 
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
@@ -132,31 +128,6 @@ public class HistorialSolicitudesFragment extends Fragment implements Response.L
         }
 
     }
-
-    /*public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener. onFragmentInteraction(uri);
-        }
-    }
-
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(Uri uri);
-    }*/
 }
 
 

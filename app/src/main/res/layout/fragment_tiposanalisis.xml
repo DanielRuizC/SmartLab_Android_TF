@@ -6,248 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".ui.tiposAnalisis.TiposAnalisisFragment">
 
-    <ScrollView
+    <TextView
+        android:id="@+id/text_slideshow"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#28FFFF8D"
-        tools:layout_editor_absoluteX="-29dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:text="Tipos de Analisis"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/textView60"
-                android:layout_width="223dp"
-                android:layout_height="37dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="8dp"
-                android:text="Determinar fallas por fatiga de metales ferrosos y contacto entre metales..."
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView59" />
-
-            <TextView
-                android:id="@+id/textView58"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="70dp"
-                android:text="Sulfatación"
-                android:textColor="#040404"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView59" />
-
-            <ImageView
-                android:id="@+id/imageView19"
-                android:layout_width="58dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="TODO"
-                android:src="@drawable/lab_4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView58" />
-
-            <TextView
-                android:id="@+id/textView59"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="70dp"
-                android:text="Nitración"
-                android:textColor="#040404"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView55" />
-
-            <ImageView
-                android:id="@+id/imageView20"
-                android:layout_width="58dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="TODO"
-                android:src="@drawable/lab_3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView59" />
-
-            <TextView
-                android:id="@+id/textView57"
-                android:layout_width="222dp"
-                android:layout_height="33dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="8dp"
-                android:text="Determinar fallas por fatiga de metales ferrosos y contacto entre metales..."
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView58" />
-
-            <TextView
-                android:id="@+id/textView56"
-                android:layout_width="220dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="8dp"
-                android:text="Determinar fallas por fatiga de metales ferrosos y contacto entre metales..."
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView55" />
-
-            <TextView
-                android:id="@+id/textView55"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="70dp"
-                android:text="Oxidación"
-                android:textColor="#040404"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView51" />
-
-            <ImageView
-                android:id="@+id/imageView18"
-                android:layout_width="58dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="TODO"
-                android:src="@drawable/lab_2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView55" />
-
-            <TextView
-                android:id="@+id/textView51"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="70dp"
-                android:text="Viscocidad"
-                android:textColor="#040404"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-            <TextView
-                android:id="@+id/textView52"
-                android:layout_width="217dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="8dp"
-                android:text="Determinar fallas por fatiga de metales ferrosos y contacto entre metales..."
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView51" />
-
-            <ImageView
-                android:id="@+id/imageView16"
-                android:layout_width="58dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:contentDescription="TODO"
-                android:src="@drawable/lab_1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView51" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="40dp"
-                android:text="Conteo de Partículas"
-                android:textColor="#040404"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="58dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
-                android:contentDescription="TODO"
-                android:src="@drawable/conteo_particulas"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView11" />
-
-            <TextView
-                android:id="@+id/textView42"
-                android:layout_width="220dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="8dp"
-                android:text="Determinar fallas por fatiga de metales ferrosos y contacto entre metales..."
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-            <ImageButton
-                android:id="@+id/botonFlecha1"
-                android:layout_width="54dp"
-                android:layout_height="51dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
-                android:rotation="180"
-                android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintStart_toEndOf="@+id/textView42"
-                app:layout_constraintTop_toTopOf="@+id/textView11"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <ImageButton
-                android:id="@+id/botonFlecha"
-                android:layout_width="54dp"
-                android:layout_height="51dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
-                android:rotation="180"
-                android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintStart_toEndOf="@+id/textView56"
-                app:layout_constraintTop_toTopOf="@+id/textView55"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <ImageButton
-                android:id="@+id/botonFlecha2"
-                android:layout_width="54dp"
-                android:layout_height="51dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
-                android:rotation="180"
-                android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintStart_toEndOf="@+id/textView60"
-                app:layout_constraintTop_toTopOf="@+id/textView59"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <ImageButton
-                android:id="@+id/botonFlecha3"
-                android:layout_width="54dp"
-                android:layout_height="51dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
-                android:rotation="180"
-                android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintStart_toEndOf="@+id/textView57"
-                app:layout_constraintTop_toTopOf="@+id/textView58"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <ImageButton
-                android:id="@+id/botonFlecha4"
-                android:layout_width="54dp"
-                android:layout_height="51dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
-                android:rotation="180"
-                android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintStart_toEndOf="@+id/textView52"
-                app:layout_constraintTop_toTopOf="@+id/textView51"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerAnalisis"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_slideshow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

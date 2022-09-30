@@ -12,6 +12,7 @@
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/activity_mapa_basico.xml" value="0.2608695652173913" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/app_bar_main.xml" value="0.29791666666666666" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/content_main.xml" value="0.20516304347826086" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/fila_analisis.xml" value="0.33" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/fila_historial_solicitudes.xml" value="0.5" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/fragment_comentario.xml" value="0.37135416666666665" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/fragment_detalles_analisis.xml" value="0.5" />
@@ -23,7 +24,7 @@
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/fragment_registro_equipo.xml" value="0.371875" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/fragment_resultado_analisis.xml" value="0.33" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/fragment_slideshow.xml" value="0.29791666666666666" />
-        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/fragment_tiposanalisis.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/fragment_tiposanalisis.xml" value="0.25" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/layout/nav_header_main.xml" value="0.29791666666666666" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/menu/activity_main_drawer.xml" value="0.29791666666666666" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/SmartLab_TF/app/src/main/res/menu/main.xml" value="0.371875" />

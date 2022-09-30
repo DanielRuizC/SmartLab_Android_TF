@@ -5,6 +5,10 @@ public class SolicitudModel {
     private String strFechaRegistroSolicitud;
     private String strEstadoSolicitud;
 
+    public SolicitudModel() {
+
+    }
+
     public String getIdCodigoSolicitud() {
         return idCodigoSolicitud;
     }
